@@ -27,7 +27,31 @@ const Register = () => {
 
         console.log(account_type)
 
-        
+        if(account_type == 1){
+            console.log('Buyer account')
+            createUser(email, password)
+            .then(res => {
+              //  console.log(res)
+                form.reset()
+                saveUser(email,name,phone)
+                
+
+            })
+            .catch(error => setError('This email already exist'))
+
+
+        }
+        if(account_type == 0){
+            console.log('seller account')
+            createUser(email, password)
+            .then(res => {
+              //  console.log(res)
+                form.reset()
+                saveUser(email,name,phone)
+            })
+            .catch(error => setError('This email already exist'))
+        }
+       
 
     }
     const google2 = () => {
