@@ -1,3 +1,11 @@
 .bg2{
     background-color: #d0d1ff;
 }
+.btn-2{
+    background-color: #d0d1ff;
+    color: black;
+}
+.btn-2:hover {
+
+    background-color: #cdb4db;
+}

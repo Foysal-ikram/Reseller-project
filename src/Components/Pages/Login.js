@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Loader/UserContext';
 import { FcGoogle } from "react-icons/fc";
 import './Page.css';
@@ -9,7 +9,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Login = () => {
     const { user, google } = useContext(AuthContext)
     const provider = new GoogleAuthProvider();
-
+    const navigate = useNavigate()
     const handleSubmit = event => {
 
     }
@@ -20,6 +20,7 @@ const Login = () => {
         .then(result => {
             console.log(result)
             toast.success('Succesfull Login')
+            navigate('/')
             
         })
         .catch(err => console.log(err))
@@ -37,18 +38,7 @@ const Login = () => {
                 <h1 className="text-5xl text-center font-bold">Log in </h1>
 
                 <form onSubmit={handleSubmit} className="card-body">
-                    <div className="form-control">
-                        <label className=''>
-                            <span className="label-text pl-1 "> Account type </span>
-                            <select name="slot" className="select select-bordered w-full bg2" >
-
-                                <option value={'seller'} className='text-md'> Seller Account</option>
-                                <option value={'buyer'} className=''>Buyer Account </option>
-
-                            </select>
-                        </label>
-                    </div>
-                    
+                           
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
@@ -66,7 +56,7 @@ const Login = () => {
                     </div>
 
                     <div className="form-control mt-8">
-                        <input type="submit" className='btn btn-info' value="Signup" />
+                        <input type="submit" className='btn btn-2' value="Signup" />
                     </div>
                     <div className='block mt-4'>
                         <button onClick={google2} className='btn btn-outline w-full btn-dark text-3xl my-1'><FcGoogle /></button>
