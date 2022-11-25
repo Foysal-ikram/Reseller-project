@@ -22,7 +22,7 @@ const SideNav = () => {
 
         // { title: "Schedule ", src: calender },
         // { title: "Search", src: search },
-        // { title: "Analytics", src: chart },
+         { title: "Seller", src: chart },
         // { title: "Files ", src: folder, gap: true },
         // { title: "Setting", src: setting },
 
@@ -52,22 +52,24 @@ const SideNav = () => {
                         Designer
                     </h1>
                 </div>
-                <ul className="pt-6">
+                <React.Fragment>
+                <ul className="pt-6 ">
                     {Menus.map((Menu, index) => (
-                        <li
+                       <Link to={Menu.link} className='flex w-full items-center'> <li
                             key={index}
-                            className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+                            className={`flex w-full rounded-md p-2 cursor-pointer hover:border-2 text-gray-300 text-sm items-center gap-x-4 
                 ${Menu.gap ? "mt-9" : "mt-2"} ${index === 0 && "bg-light-white"
                                 } `}
                         >
-                            <Link to={Menu.link} className='flex  items-center'>
+                            
                                 <img src={Menu.src} alt='' />
                                 <span className={`${!open && "hidden"} pt-1 pl-2 items-center origin-left duration-200`}>
                                     {Menu.title}
                                 </span>
-                            </Link> </li>
+                             </li></Link>
                     ))}
                 </ul>
+                </React.Fragment>
             </div>
 
         </div>

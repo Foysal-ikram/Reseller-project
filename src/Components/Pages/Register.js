@@ -26,13 +26,13 @@ const Register = () => {
         const phone = form.phone.value;
         const password = form.password.value;
         const account_type = form.slot.value;
-        const role = form.slot.value;
+       
 
         const users = {
             name,
             email,
             phone,
-            role: account_type,
+            account_type: account_type,
 
         }
 
@@ -40,7 +40,7 @@ const Register = () => {
         createUser(email, password)
             .then(res => {
                 console.log(res)
-                saveUser(email, name, phone, role)
+                saveUser(email, name, phone, account_type)
                 form.reset();
             })
             .catch(error => setError('email already exist'))
@@ -72,8 +72,8 @@ const Register = () => {
     // --------------------------------Save user to my database-----------------------------
 
 
-    const saveUser = (email, name, phone, role) => {
-        const user = { email, name, phone, role }
+    const saveUser = (email, name, phone, account_type) => {
+        const user = { email, name, phone, account_type }
 
         console.log(user)
         fetch(`http://localhost:5000/users`, {

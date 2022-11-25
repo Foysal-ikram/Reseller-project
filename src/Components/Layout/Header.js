@@ -10,7 +10,6 @@ const Header = () => {
         logOut()
     }
 
-
     const menue = <React.Fragment>
         <li><Link to={'/'} className='font-font-medium nav2 mx-1 rounded-md '>Home</Link></li>
         <li><Link to={'/'} className='font-font-medium nav2 mx-1 rounded-md '>About</Link></li>
