@@ -27,7 +27,9 @@ const Register = () => {
         const password = form.password.value;
         const account_type = form.slot.value;
        
-
+        if(password.length < 6){
+            return setError('password can not be less than six character')
+        }
         const users = {
             name,
             email,
@@ -42,6 +44,7 @@ const Register = () => {
                 console.log(res)
                 saveUser(email, name, phone, account_type)
                 form.reset();
+                setError(null)
             })
             .catch(error => setError('email already exist'))
     }

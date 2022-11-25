@@ -34,7 +34,7 @@ const Header = () => {
     </React.Fragment>
 
     return (
-        <div className='border-b-2 border-blue-900'>
+        <div className='border-b-2 border-blue-900  self-start sticky top-0 z-20'>
             <div className=" max-w-screen-2xl mx-auto z-20 navbar  bg-base-100 lg:pl-20 self-start sticky top-0 col-span-1">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -48,7 +48,7 @@ const Header = () => {
 
                         </ul>
                     </div>
-                    <a href='/' className="text-2xl"> <span className='font-medium text-black-400	'>Buy</span><span className='text-fuchsia-600	'>Sell</span></a>
+                    <a href='/' className="text-2xl"> <span className='font-medium text-black-400	'>Old</span><span className='text-fuchsia-600	'>Kickers</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">

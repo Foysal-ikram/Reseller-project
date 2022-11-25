@@ -16,14 +16,14 @@ const SideNav = () => {
     const [open, setOpen] = useState(true);
     const Menus = [
         { title: "Dashboard", src: dashboard, link: "/dashboard/" },
-        { title: "Inbox", src: Chat },
+        { title: "My Orders", src: Chat },
 
-        { title: "All Users", src: user, gap: true, link: "/dashboard/users" },
+        { title: "All Users", src: user, gap: true, link: "/dashboard" },
 
         // { title: "Schedule ", src: calender },
         // { title: "Search", src: search },
-         { title: "Seller", src: chart },
-        // { title: "Files ", src: folder, gap: true },
+         { title: "Sellers", src: chart , link: "/dashboard/sellers"},
+         { title: "Files ", src: folder, gap: true },
         // { title: "Setting", src: setting },
 
     ];
@@ -49,7 +49,7 @@ const SideNav = () => {
                         className={`text-white origin-left font-medium text-xl duration-200 ${!open && "scale-0"
                             }`}
                     >
-                        Designer
+                        OldKickers
                     </h1>
                 </div>
                 <React.Fragment>
