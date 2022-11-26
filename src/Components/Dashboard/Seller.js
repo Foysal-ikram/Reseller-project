@@ -21,6 +21,7 @@ const Seller = () => {
     return (
         <div className="overflow-x-auto">
             <Toaster></Toaster>
+            <h1 className='text-center text-4xl py-4 font-serif'>Seller Page</h1>
             <table className="table table-zebra w-full">
 
                 <thead>

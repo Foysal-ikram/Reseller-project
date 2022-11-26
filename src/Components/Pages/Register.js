@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
-import { GoogleAuthProvider, sendEmailVerification } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, sendEmailVerification, updateProfile } from 'firebase/auth';
 import { AuthContext } from '../../Loader/UserContext';
 import toast, { Toaster } from 'react-hot-toast';
 import './Page.css'
@@ -16,7 +16,8 @@ const Register = () => {
     const [error, setError] = useState([]);
     const [mail, setMail] = useState('');
     const [type, setType] = useState(null)
-    console.log(type)
+    const auth = getAuth();
+    //console.log(type)
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -26,8 +27,13 @@ const Register = () => {
         const phone = form.phone.value;
         const password = form.password.value;
         const account_type = form.slot.value;
-       
-        if(password.length < 6){
+        const img = form.image.value ;
+
+        // ==============================Update username in firebase====================
+
+
+
+        if (password.length < 6) {
             return setError('password can not be less than six character')
         }
         const users = {
@@ -41,8 +47,12 @@ const Register = () => {
         console.log(email, name)
         createUser(email, password)
             .then(res => {
-                console.log(res)
+
                 saveUser(email, name, phone, account_type)
+                updateProfile(auth.currentUser, {
+                    displayName: name ,
+                    photoURL : img
+                })
                 form.reset();
                 setError(null)
             })
@@ -89,6 +99,7 @@ const Register = () => {
             .then(res => {
                 console.log(res)
                 toast.success('succesful');
+                navigate('/')
 
                 // setMail(mail)
 
@@ -141,13 +152,14 @@ const Register = () => {
                             <input type="text" name='password' placeholder="password" className="input input-bordered" />
                         </div>
                     </div>
-
+                    <input type="text" name='image' placeholder="enter your img url" className="input input-bordered" />
+                  
                     <p className='text-error'>{error}</p>
                     <div className="form-control mt-8">
                         <input type="submit" className='btn btn-2' value="Signup" />
                     </div>
                     <p>{error}</p>
-
+                        
                     {!type &&
 
                         <div className='block mt-4'>

@@ -22,7 +22,7 @@ const Users = () => {
         <div className="overflow-x-auto">
             <Toaster></Toaster>
             <div  className=' py-4'>
-                <h1  className='text-center font-bold text-4xl font-serif '>All Users</h1>
+                <h1  className='text-center text-4xl font-serif '>All Users</h1>
             </div>
             <table className="table table-zebra w-full">
 

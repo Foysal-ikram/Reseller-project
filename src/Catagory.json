@@ -1,0 +1,28 @@
+[
+    {
+        "catagory_name": "Monitor",
+        "catagory_id": "01" 
+    },
+    {
+        "catagory_name": "Keyboard",
+        "catagory_id": "02" 
+    },
+    {
+        "catagory_name": "Graphics Card",
+        "catagory_id": "03" 
+    },
+    {
+        "catagory_name": "Motherboard",
+        "catagory_id": "04" 
+    },
+    {
+        "catagory_name": "Mouse",
+        "catagory_id": "05" 
+    },
+    
+    {
+        "catagory_name": "Others",
+        "catagory_id": "06" 
+    }
+  
+]
