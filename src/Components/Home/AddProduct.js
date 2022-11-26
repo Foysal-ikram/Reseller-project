@@ -13,7 +13,7 @@ const AddProduct = () => {
             {/* -------------------------------------- */}
 
 
-            <div className='bg-white max-w-lg mx-auto rounded-lg border-sky-200 flex p-4'>
+            <div className='bg-white lg:mx-8  rounded-lg border-sky-200 flex p-4 z-10'>
                 <div className='mr-2'>
                     {user?.photoURL ?
 

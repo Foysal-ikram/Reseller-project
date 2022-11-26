@@ -6,7 +6,7 @@ import AllProducts from './AllProducts';
 import Modal from './Modal';
 
 const Display = () => {
-    
+
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products'],
@@ -21,9 +21,8 @@ const Display = () => {
             <Toaster></Toaster>
             <AddProduct></AddProduct>
             <AllProducts></AllProducts>
-           
+
             <Modal
-                
                 refetch={refetch}
                 isLoading={isLoading}
             ></Modal>

@@ -10,7 +10,7 @@ const LeftNav = () => {
 
     return (
         <div className=''>
-            <Sidebar className='min-h-screen  bg-gray-200 font-medium m-0 	' >
+            <Sidebar className='min-h-screen  bg-gray-200 font-medium m-0 	w-2/3' >
                 <Menu className='bg-gray-200 '>
                     <SubMenu label="catagories" className='menu2'>
                         {catagories.map(catagory => 

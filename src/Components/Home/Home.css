@@ -1,0 +1,16 @@
+.mybtn{
+    color: rgb(251, 251, 251);
+    padding: 5px 20px !important;
+    background-color: rgb(80, 79, 79);
+    border-radius: 5px;
+
+}
+.mybtn:hover {
+    background-color: rgb(50, 102, 199);
+    
+}
+
+.mybtn:active{
+    transition: .2s;
+    transform: scale(1.1);
+}

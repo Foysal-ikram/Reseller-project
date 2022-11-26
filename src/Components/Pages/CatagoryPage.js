@@ -3,9 +3,11 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CatagoryPageCard from './CatagoryPageCard';
 
-const CatagoryPage = (id) => {
+const CatagoryPage = () => {
     const data = useLoaderData() ;
     console.log(data)
+
+  
 
 
     return (
