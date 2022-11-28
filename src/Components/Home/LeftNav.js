@@ -10,8 +10,8 @@ const LeftNav = () => {
 
     return (
         <div className=''>
-            <Sidebar className='min-h-screen  bg-gray-200 font-medium m-0 	w-2/3' >
-                <Menu className='bg-gray-200 '>
+            <Sidebar className='min-h-screen   font-medium m-0 	w-2/3' >
+                <Menu className=''>
                     <SubMenu label="catagories" className='menu2'>
                         {catagories.map(catagory => 
                         <Link to={`/catagory/${catagory.catagory_name}`}><MenuItem>{catagory.catagory_name}</MenuItem></Link>

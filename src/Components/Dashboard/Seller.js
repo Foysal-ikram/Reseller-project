@@ -30,6 +30,7 @@ const Seller = () => {
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
+                        <th  className='text-center'>Status</th>
                         <th className='text-center'>Delete</th>
                     </tr>
                 </thead>

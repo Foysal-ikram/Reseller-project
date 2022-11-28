@@ -24,11 +24,11 @@ const UsersCard = ({ user, i, refetch, isLoading }) => {
                         })
                             .then(res => res.json())
                             .then(res => {
-                                if(res.acknowledged){
+                                if (res.acknowledged) {
                                     refetch()
                                     toast.success('succesfully deleted')
                                 }
-                              
+
                             })
                     }
                 },

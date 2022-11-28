@@ -9,11 +9,11 @@ const AddProduct = () => {
     return (
         <div className='mt-2 mb-2'>
             {/* -------------------------------------- */}
-
+                
             {/* -------------------------------------- */}
 
 
-            <div className='bg-white lg:mx-8  rounded-lg border-sky-200 flex p-4 z-10'>
+            <div className='bg-white lg:mx-8  rounded-lg border-2 border-black py-8 flex p-4 z-10'>
                 <div className='mr-2'>
                     {user?.photoURL ?
 

@@ -34,8 +34,8 @@ const Header = () => {
     </React.Fragment>
 
     return (
-        <div className='border-b-2 border-blue-900  self-start sticky top-0 z-20'>
-            <div className=" max-w-screen-2xl mx-auto z-20 navbar  bg-base-100 lg:pl-20 self-start sticky top-0 col-span-1">
+        <div className='border-b-2 border-blue-900  self-start sticky top-0 z-20 bg-white	'>
+            <div className=" max-w-screen-2xl mx-auto z-20 navbar  lg:pl-20 self-start sticky top-0 col-span-1">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

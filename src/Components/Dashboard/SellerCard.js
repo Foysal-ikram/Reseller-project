@@ -39,6 +39,16 @@ const SellerCard = ({ seller, i, refetch, isLoading }) => {
         });
     }
 
+    const handleVerify=id=>{
+        fetch(`http://localhost:5000/sellerverify?id=${id}`, {
+            method: 'PUT',
+        })
+            .then(res => res.json())
+            .then(res => {
+                refetch()
+                toast.success('Succesfully Verified')
+            })
+    }
 
 
     if (isLoading) {
@@ -52,6 +62,17 @@ const SellerCard = ({ seller, i, refetch, isLoading }) => {
             <td>{seller.name}</td>
             <td>{seller.email}</td>
             <td>{seller.phone}</td>
+            <td className='text-center'>
+            {seller.verifyStatus?
+                
+                <button className='btn btn-sm btn-error w-20' disabled > Verified </button>
+                :
+                <button onClick={() => handleVerify(seller._id)} className='btn btn-sm btn-success w-20' > Verify </button>
+               
+              
+            }
+            
+            </td>
             <td className='text-center'>
                 <button onClick={() => handleDelete(seller._id)} className='btn btn-sm btn-error w-20' > <AiFillDelete /></button>
             </td>

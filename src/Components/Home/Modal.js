@@ -12,6 +12,7 @@ const Modal = ({ refetch, setModal }) => {
         event.preventDefault();
         const form = event.target;
         const catagory_name = form.catagory_name.value;
+        const email =form.email.value ;
         const location = form.location.value;
         const phone = form.phone.value;
         const original_price = form.price1.value;
@@ -31,6 +32,7 @@ const Modal = ({ refetch, setModal }) => {
 
         const product = {
             seller_name : user?.displayName ,
+            email ,
             seller_img,
             productName,
             date,

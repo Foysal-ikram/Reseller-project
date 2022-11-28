@@ -17,8 +17,9 @@ const Display = () => {
 
 
     return (
-        <div>
+        <div className='w-full'>
             <Toaster></Toaster>
+          
             <AddProduct></AddProduct>
             <AllProducts></AllProducts>
 
