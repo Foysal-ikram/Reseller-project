@@ -2,11 +2,13 @@ import React from 'react';
 import { Sidebar, Menu, MenuItem, useProSidebar, SubMenu } from 'react-pro-sidebar';
 import './Home.css';
 import catagories from '../../Catagory.json'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LeftNav = () => {
     const { collapseSidebar } = useProSidebar();
+    const navigate = useNavigate() ;
     console.log(catagories)
+  
 
     return (
         <div className=''>
@@ -21,7 +23,7 @@ const LeftNav = () => {
                         )}
 
                     </SubMenu>
-                    <MenuItem className='menu2'> Documentation </MenuItem>
+                    <MenuItem className='menu2' href='/allproducts'> All Products </MenuItem>
                     <MenuItem className='menu2'> Calendar </MenuItem>
                     <SubMenu label="Charts" className='menu2'>
                         <MenuItem> Pie charts </MenuItem>

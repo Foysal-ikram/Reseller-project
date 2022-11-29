@@ -7,7 +7,7 @@ const AddProduct = () => {
 
 
     return (
-        <div className='mt-2 mb-2'>
+        <div className='mt-4 mb-2 mx-10 '>
             {/* -------------------------------------- */}
                 
             {/* -------------------------------------- */}
@@ -27,7 +27,7 @@ const AddProduct = () => {
                 <div className='bg-gray-200 w-full rounded-full'>
                     <label htmlFor="my-modal-6" className=" btn btn-active btn-ghost w-full rounded-full">
                         <div className=' w-full'>
-                            <h1 className='p-2 rounded-full'>Add your computer items</h1>
+                            <h1 className='p-2 rounded-full'>Add your computer items here</h1>
                         </div>
                     </label>
                 </div>

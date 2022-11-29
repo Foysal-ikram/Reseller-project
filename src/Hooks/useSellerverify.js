@@ -4,7 +4,7 @@ const useSellerverify = email => {
     
     const [isverified, setIsverified] = useState(false);
     const [isverifiedLoading, setIsverifiedLoading] = useState(true);
-    console.log( isverified )
+    //console.log( isverified )
     useEffect(() => {
         if (email) {
             fetch(`http://localhost:5000/sellerverify/${email}`)

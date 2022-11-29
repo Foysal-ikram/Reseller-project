@@ -4,6 +4,7 @@ import Dashpage from "../Components/Dashboard/Dashpage";
 import Seller from "../Components/Dashboard/Seller";
 import Users from "../Components/Dashboard/Users";
 import AddProduct from "../Components/Home/AddProduct";
+import AllProducts from "../Components/Home/AllProducts";
 import Display from "../Components/Home/Display";
 import Home from "../Components/Home/Home";
 import Main from "../Components/Layout/Main";
@@ -73,6 +74,10 @@ export const router = createBrowserRouter([
                 path : '/catagory/:name' ,
                 element : <PrivateRoute><CatagoryPage></CatagoryPage></PrivateRoute> ,
                 loader :({params}) => fetch(`http://localhost:5000/catagory/${params.name}`)
+            },
+            {
+                path : '/allproducts' ,
+                element : <AllProducts></AllProducts>
             }
         ]
     }
