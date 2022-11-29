@@ -4,23 +4,32 @@ import { BsThreeDots } from "react-icons/bs";
 import Loading from '../../Loader/Loading';
 import './Home.css';
 import { FcApproval } from "react-icons/fc";
+import useSellerverify from '../../Hooks/useSellerverify';
 
 const AllProductsCard = ({ product, isLoading, refetch }) => {
     if (isLoading) {
         <Loading></Loading>
     }
-    console.log(product.email)
-    
+    const [isverified , isverifiedLoading] = useSellerverify(product?.email)
+    console.log(isverified)
+    if(isverifiedLoading){
+        <Loading></Loading>
+    }
+
+    const details=()=>{
+
+    }
 
     return (
-        <div className=' bg-white w-full max-w-lg mx-auto rounded-lg drop-shadow-lg  p-4 mt-2 ' >
+        <div onClick={details} className=' ease-in-out bg-white w-full max-w-lg mx-auto rounded-lg drop-shadow-lg  p-4 mt-2 ' >
             <div className='flex justify-between'>
                 <div className='flex items-center'>
                     <div className=''><img src={product.seller_img} className='h-12 rounded-lg ' width={42} alt="" /></div>
                     <div className='ml-2'>
                         <h1 className='overflow-hidden text-ellipsis h-6 font-bold  '>{product.seller_name}
-                           {
-                            <span class="absolute inline-flex "><FcApproval/></span>}
+                            {isverified &&
+                                <span class="absolute inline-flex "><FcApproval /></span>
+                            }
                         </h1>
                         <h1 className='text-xs '>{product.date}</h1>
                     </div>

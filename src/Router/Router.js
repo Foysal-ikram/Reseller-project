@@ -30,11 +30,7 @@ export const router = createBrowserRouter([
                         path : '*' ,
                         element : <Error></Error>
                     },
-                    {
-                        path : '/catagory/:name' ,
-                        element : <CatagoryPage></CatagoryPage> ,
-                        loader :({params}) => fetch(`http://localhost:5000/catagory/${params.name}`)
-                    }
+                   
                 ]
             },
             {
@@ -60,6 +56,11 @@ export const router = createBrowserRouter([
                    
                     
                 ]
+            },
+            {
+                path : '/catagory/:name' ,
+                element : <CatagoryPage></CatagoryPage> ,
+                loader :({params}) => fetch(`http://localhost:5000/catagory/${params.name}`)
             }
         ]
     }

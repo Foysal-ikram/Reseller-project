@@ -14,7 +14,9 @@ const LeftNav = () => {
                 <Menu className=''>
                     <SubMenu label="catagories" className='menu2'>
                         {catagories.map(catagory => 
-                        <Link to={`/catagory/${catagory.catagory_name}`}><MenuItem>{catagory.catagory_name}</MenuItem></Link>
+                        <Link to={`/catagory/${catagory.catagory_name}`}><MenuItem
+                        key={catagory.catagory_id}
+                        >{catagory.catagory_name}</MenuItem></Link>
 
                         )}
 

@@ -10,7 +10,11 @@ const TopBar = () => {
             <ul tabIndex={0} className="dropdown-content   p-2 shadow bg-gray-200 rounded-box w-full">
                 {
                     catagories.map(catagory=>
-                    <Link to={`/catagory/${catagory.catagory_name}`}><li className='w-full text-center hover:bg-white mx-auto'>{catagory.catagory_name}</li></Link>
+                    <Link to={`/catagory/${catagory.catagory_name}`}
+                    
+                    ><li className='w-full text-center hover:bg-white mx-auto'
+                    key={catagory.catagory_id}
+                    >{catagory.catagory_name}</li></Link>
                     )
                 }
             </ul>

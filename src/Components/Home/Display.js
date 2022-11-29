@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import AddProduct from './AddProduct';
 import AllProducts from './AllProducts';
 import Modal from './Modal';
+import ShowCatagory from './ShowCatagory';
 
 const Display = () => {
 
@@ -19,9 +20,11 @@ const Display = () => {
     return (
         <div className='w-full'>
             <Toaster></Toaster>
+
+            <ShowCatagory></ShowCatagory>
           
-            <AddProduct></AddProduct>
-            <AllProducts></AllProducts>
+            {/* <AddProduct></AddProduct>
+            <AllProducts></AllProducts> */}
 
             <Modal
                 refetch={refetch}

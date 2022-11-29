@@ -11,7 +11,7 @@ const useSellerverify = email => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    isverified(data.isAdmin);
+                    setIsverified(data.isverified);
                     setIsverifiedLoading(false);
                 })
         }

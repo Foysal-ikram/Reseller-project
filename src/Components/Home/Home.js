@@ -1,36 +1,49 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ProSidebarProvider } from 'react-pro-sidebar';
 import { Link, Outlet } from 'react-router-dom';
+import useSeller from '../../Hooks/useSeller';
+import Loading from '../../Loader/Loading';
+import { AuthContext } from '../../Loader/UserContext';
+import AddProduct from './AddProduct';
 import Banner from './Banner/Banner';
 import LeftNav from './LeftNav';
 import OtherCards from './OtherCards/OtherCards';
-import RightNav from './RightNav';
 import TopBar from './TopBar';
 
 const Home = () => {
-    return (
-        <ProSidebarProvider>
-            <div>
-                <div className='md:hidden'>
-                    <TopBar></TopBar>
-                </div>
-                
-                <Banner></Banner>
-                <OtherCards></OtherCards>
-                <h1 className='text-center text-4xl bg-purple-200 font-serif py-6 border-2 underline decoration-wavy'>Find Your Product </h1>
-          
-                 <div className='flex bg-purple-200'>
-                
-                    <div className='self-start sticky top-16 hidden md:block bg-white'>
-                        <LeftNav></LeftNav>
-                    </div>
-                    <div className='mx-auto w-full '>
-                        <Outlet></Outlet>
-                    </div>
+    const { user } = useContext(AuthContext)
+    const email = user.email;
+    const [isSeller, isSellerLoading] = useSeller(email)
+    console.log(isSeller)
+    
+    if (isSellerLoading) {
+        <Loading></Loading>
+    }
 
-                </div>
+    return (
+
+        <div>
+            <div className='self-start md:hidden sticky top-16 z-20'>
+                <TopBar></TopBar>
             </div>
-        </ProSidebarProvider>
+
+            <Banner></Banner>
+            <OtherCards></OtherCards>
+            <AddProduct></AddProduct>
+            <h1 className='text-center lg:text-4xl bg-white-200 font-serif py-6 border-2 '>Which catagory product are you finding ?</h1>
+
+            <div className='flex bg-sky-400'>
+
+                {/* <div className='self-start sticky top-16 hidden md:block bg-white'>
+                        <LeftNav></LeftNav>
+                    </div> */}
+                <div className='mx-auto w-full '>
+                    <Outlet></Outlet>
+                </div>
+
+            </div>
+        </div>
+
     );
 };
 
