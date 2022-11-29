@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../../Loader/UserContext';
+import { AuthContext } from '../../../Loader/UserContext';
 import { BsThreeDots } from "react-icons/bs";
-import Loading from '../../Loader/Loading';
-import useSellerverify from '../../Hooks/useSellerverify';
+import Loading from '../../../Loader/Loading';
+import useSellerverify from '../../../Hooks/useSellerverify';
 
 import { FcApproval } from "react-icons/fc";
 

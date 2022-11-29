@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Loader/UserContext';
 import { FcGoogle } from "react-icons/fc";
 import './Page.css';
@@ -8,9 +8,12 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
     const [error, setError] = useState(null)
+    const location = useLocation() ;
     const { user, google,signin } = useContext(AuthContext)
     const provider = new GoogleAuthProvider();
     const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/';
+
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -25,7 +28,7 @@ const Login = () => {
                 const user = res.user;
                 
                 console.log(user)
-                navigate('/')
+                navigate(from, { replace: true });
             })
             .catch(error => setError('Password did not match'))
 
@@ -38,7 +41,7 @@ const Login = () => {
         .then(result => {
             console.log(result)
             toast.success('Succesfull Login')
-            navigate('/')
+            navigate(from, { replace: true });
             
         })
         .catch(err => console.log(err))

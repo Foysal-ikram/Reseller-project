@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { ProSidebarProvider } from 'react-pro-sidebar';
 import { useLoaderData } from 'react-router-dom';
-import LeftNav from '../Home/LeftNav';
+import LeftNav from '../../Home/LeftNav';
 import CatagoryPageCard from './CatagoryPageCard';
 
 const CatagoryPage = () => {

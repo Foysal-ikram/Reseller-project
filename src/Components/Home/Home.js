@@ -12,10 +12,10 @@ import TopBar from './TopBar';
 
 const Home = () => {
     const { user } = useContext(AuthContext)
-    const email = user.email;
+    const email = user?.email;
     const [isSeller, isSellerLoading] = useSeller(email)
     console.log(isSeller)
-    
+
     if (isSellerLoading) {
         <Loading></Loading>
     }
@@ -29,7 +29,9 @@ const Home = () => {
 
             <Banner></Banner>
             <OtherCards></OtherCards>
-            <AddProduct></AddProduct>
+            {isSeller &&
+                <AddProduct></AddProduct>
+            }
             <h1 className='text-center lg:text-4xl bg-white-200 font-serif py-6 border-2 '>Which catagory product are you finding ?</h1>
 
             <div className='flex bg-sky-400'>
