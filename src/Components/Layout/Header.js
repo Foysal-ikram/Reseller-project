@@ -5,7 +5,7 @@ import './Layout.css';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-    console.log(user)
+    
     const logOut2 = () => {
         logOut()
     }

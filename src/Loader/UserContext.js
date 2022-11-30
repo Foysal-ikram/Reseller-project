@@ -8,7 +8,7 @@ const UserContext = ({children}) => {
     const [user , setUser] = useState({}) ;
     const [loading,setLoading] = useState(true)
     const [seller , setSeller] = useState({}) ;
-
+    const [selected,setSelected] = useState(null)
 
     const createUser=(email,password)=>{
         setLoading(true)
@@ -29,6 +29,7 @@ const UserContext = ({children}) => {
         return signOut(auth)
     }
 
+
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged( auth , currentUser=>{
 
@@ -43,7 +44,7 @@ const UserContext = ({children}) => {
 
     },[])
 
-    const authInfo = {user ,loading, google ,signin, logOut,createUser} ;
+    const authInfo = {user ,loading, google ,signin,logOut,createUser,setSelected, selected} ;
     return (
         <div>
             <AuthContext.Provider value={authInfo}>

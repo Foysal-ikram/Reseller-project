@@ -1,4 +1,4 @@
-Admin : email : ph@gmail.com
+Admin : email : ph2@gmail.com
          password : aaasss
 
 

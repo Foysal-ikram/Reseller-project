@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../../Loader/UserContext';
+import React from 'react';
 import { BsThreeDots } from "react-icons/bs";
 import Loading from '../../../Loader/Loading';
 import useSellerverify from '../../../Hooks/useSellerverify';
 
 import { FcApproval } from "react-icons/fc";
 
-const CatagoryPageCard = ({ product }) => {
+const CatagoryPageCard = ({ product,setSelected }) => {
     console.log(product)
     const [isverified, isverifiedLoading] = useSellerverify(product?.email)
   
@@ -14,15 +13,15 @@ const CatagoryPageCard = ({ product }) => {
         <Loading></Loading>
     }
 
-    const details = () => {
-
+    const handleBooking=()=>{
+        setSelected(product)
     }
 
     return (
-        <div onClick={details} className=' ease-in-out bg-white w-full max-w-lg mx-auto rounded-lg drop-shadow-lg  p-4 mt-2 ' >
+        <div  className='  bg-white w-full mx-auto rounded-lg drop-shadow-lg  p-4 mt-2 ' >
             <div className='flex justify-between'>
                 <div className='flex items-center'>
-                    <div className=''><img src={product.seller_img} className='h-12 rounded-lg ' width={42} alt="" /></div>
+                    <div className=''><img src={product.seller_img} className='h-12 rounded-lg '  alt="" /></div>
                     <div className='ml-2'>
                         <h1 className='overflow-hidden text-ellipsis h-6 font-bold  '>{product.seller_name}
                             {isverified &&
@@ -50,9 +49,13 @@ const CatagoryPageCard = ({ product }) => {
                     <h1 className='font-sans'> Original Price : $ {product.original_price}</h1>
                     <h1 className='font-sans'> Resell Price : $ {product.resell_price}</h1>
                 </div>
-                <div className='flex justify-between mt-4'>
-                    <button className=' btn btn-accent btn-block'>Book Now</button>
-                </div>
+                <label
+                   
+                    htmlFor="booking-modal"
+                    className="btn btn-accent btn-block "
+                    onClick={() => handleBooking(product._id)}
+                >Book Now
+                </label>
             </div>
         </div>
     );

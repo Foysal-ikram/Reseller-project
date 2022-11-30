@@ -16,7 +16,7 @@ const Home = () => {
     const email = user?.email;
     const [isSeller, isSellerLoading] = useSeller(email)
     const [isAdmin, isAdminLoading] = useAdmin(email)
-    console.log(isSeller)
+    //console.log(isSeller)
 
     if (isSellerLoading && isAdminLoading) {
         <Loading></Loading>

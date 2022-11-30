@@ -5,9 +5,12 @@ import { AuthContext } from '../../Loader/UserContext';
 import { FcGoogle } from "react-icons/fc";
 import './Page.css';
 import toast, { Toaster } from 'react-hot-toast';
+import useToken from '../../Hooks/useToken';
 
 const Login = () => {
     const [error, setError] = useState(null)
+    const [loginUserEmail, setLoginUserEmail] = useState('');
+    const [token] = useToken(loginUserEmail);
     const location = useLocation() ;
     const { user, google,signin } = useContext(AuthContext)
     const provider = new GoogleAuthProvider();
@@ -26,8 +29,8 @@ const Login = () => {
         signin(email, password)
             .then(res => {
                 const user = res.user;
-                
-                console.log(user)
+               // console.log(user)
+                setLoginUserEmail(user.email)
                 navigate(from, { replace: true });
             })
             .catch(error => setError('Password did not match'))
@@ -40,6 +43,9 @@ const Login = () => {
         google(provider)
         .then(result => {
             console.log(result)
+            const user = result.user ;
+            console.log(user.email)
+            setLoginUserEmail(user.email)
             toast.success('Succesfull Login')
             navigate(from, { replace: true });
             

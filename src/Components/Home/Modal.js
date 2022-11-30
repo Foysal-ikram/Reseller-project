@@ -9,7 +9,7 @@ const Modal = ({ refetch, setModal }) => {
     const [today, setToday] = useState(Date);
     const date = today.slice(4, 15);
 
-    const handleBooking = event => {
+    const addProduct = event => {
         event.preventDefault();
         const form = event.target;
         const catagory_name = form.catagory_name.value;
@@ -93,7 +93,7 @@ const Modal = ({ refetch, setModal }) => {
                 <div className="modal-box relative">
                     <label htmlFor="my-modal-6" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="text-lg font-bold text-center">{user?.name}</h3>
-                    <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10' >
+                    <form onSubmit={addProduct} className='grid grid-cols-1 gap-3 mt-10' >
                         <div className='flex'>
                             <input type="text" disabled value={date} className="input mr-1 input-bordered w-1/2" ></input>
                             <input name="email" type="email" placeholder="Email Address" required defaultValue={user?.email} disabled className="input  w-1/2 input-bordered" />

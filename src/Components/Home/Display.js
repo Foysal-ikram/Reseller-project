@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import AddProduct from './AddProduct';
 import AllProducts from './AllProducts';
+import BookingModal from './BookingModal';
 import Modal from './Modal';
 import ShowCatagory from './ShowCatagory';
 
@@ -20,7 +21,7 @@ const Display = () => {
     return (
         <div className='w-full'>
             <Toaster></Toaster>
-
+            <BookingModal></BookingModal>
             <ShowCatagory></ShowCatagory>
           
             {/* <AddProduct></AddProduct>
@@ -30,6 +31,7 @@ const Display = () => {
                 refetch={refetch}
                 isLoading={isLoading}
             ></Modal>
+            
         </div>
     );
 };
