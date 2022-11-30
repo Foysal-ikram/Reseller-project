@@ -30,10 +30,7 @@ export const router = createBrowserRouter([
                         path : '/' ,
                         element : <Display></Display>
                     },
-                    {
-                        path : '*' ,
-                        element : <Error></Error>
-                    },
+                   
                    
                 ]
             },
@@ -78,7 +75,11 @@ export const router = createBrowserRouter([
             {
                 path : '/allproducts' ,
                 element : <AllProducts></AllProducts>
-            }
+            } ,
+            {
+                path : '*' ,
+                element :<Error></Error>
+            },
         ]
     }
 ])
