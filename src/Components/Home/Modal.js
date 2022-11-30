@@ -59,7 +59,7 @@ const Modal = ({ refetch, setModal }) => {
 
                     }
 
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://reseller-server-lime.vercel.app/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

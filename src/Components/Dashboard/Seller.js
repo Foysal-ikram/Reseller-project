@@ -8,7 +8,7 @@ const Seller = () => {
 
     const { data: sellers = [], isLoading, refetch } = useQuery({
         queryKey: ['sellers'],
-        queryFn: () => fetch('http://localhost:5000/sellers')
+        queryFn: () => fetch('https://reseller-server-lime.vercel.app/sellers')
             .then(res => res.json())
 
     })

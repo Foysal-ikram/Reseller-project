@@ -1,0 +1,16 @@
+.orderBtn{
+    color: white;
+    cursor: pointer;
+
+}
+
+.orderBtn:hover {
+    transition: .2s;
+    background-color: rgb(50, 68, 232);
+    
+    
+}
+.orderBtn:active{
+    transition: .5s;
+    transform: scale(1.4);
+}

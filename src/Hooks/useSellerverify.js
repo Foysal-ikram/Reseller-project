@@ -7,7 +7,7 @@ const useSellerverify = email => {
     //console.log( isverified )
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/sellerverify/${email}`)
+            fetch(`https://reseller-server-lime.vercel.app/sellerverify/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     

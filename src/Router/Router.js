@@ -73,7 +73,7 @@ export const router = createBrowserRouter([
             {
                 path : '/catagory/:name' ,
                 element : <PrivateRoute><CatagoryPage></CatagoryPage></PrivateRoute> ,
-                loader :({params}) => fetch(`http://localhost:5000/catagory/${params.name}`)
+                loader :({params}) => fetch(`https://reseller-server-lime.vercel.app/catagory/${params.name}`)
             },
             {
                 path : '/allproducts' ,

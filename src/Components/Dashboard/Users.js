@@ -9,7 +9,7 @@ const Users = () => {
 
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch('http://localhost:5000/users')
+        queryFn: () => fetch('https://reseller-server-lime.vercel.app/users')
             .then(res => res.json())
 
     })

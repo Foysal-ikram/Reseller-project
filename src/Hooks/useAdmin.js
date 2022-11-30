@@ -7,7 +7,7 @@ const useAdmin = email => {
    // console.log( isAdmin )
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/admin/${email}`)
+            fetch(`https://reseller-server-lime.vercel.app/users/admin/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

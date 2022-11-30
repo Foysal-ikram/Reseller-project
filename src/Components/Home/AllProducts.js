@@ -11,7 +11,7 @@ const AllProducts = () => {
     const [selected, setSelected] = useState(null)
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products'],
-        queryFn: () => fetch('http://localhost:5000/products')
+        queryFn: () => fetch('https://reseller-server-lime.vercel.app/products')
             .then(res => res.json())
 
     })

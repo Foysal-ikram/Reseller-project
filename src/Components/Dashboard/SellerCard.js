@@ -18,7 +18,7 @@ const SellerCard = ({ seller, i, refetch, isLoading }) => {
                     label: 'Yes',
                     onClick: () => {
                         console.log('deleting', id)
-                        fetch(`http://localhost:5000/users?id=${id}`, {
+                        fetch(`https://reseller-server-lime.vercel.app/users?id=${id}`, {
                             method: 'DELETE',
                         })
                             .then(res => res.json())
@@ -40,7 +40,7 @@ const SellerCard = ({ seller, i, refetch, isLoading }) => {
     }
 
     const handleVerify=id=>{
-        fetch(`http://localhost:5000/sellerverify?id=${id}`, {
+        fetch(`https://reseller-server-lime.vercel.app/sellerverify?id=${id}`, {
             method: 'PUT',
         })
             .then(res => res.json())

@@ -36,7 +36,7 @@ const BookingModal = ({ selected, setSelected }) => {
             resell_price,
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://reseller-server-lime.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

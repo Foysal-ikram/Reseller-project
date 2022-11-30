@@ -19,7 +19,7 @@ const UsersCard = ({ user, i, refetch, isLoading }) => {
                     label: 'Yes',
                     onClick: () => {
                         console.log('deleting', id)
-                        fetch(`http://localhost:5000/users?id=${id}`, {
+                        fetch(`https://reseller-server-lime.vercel.app/users?id=${id}`, {
                             method: 'DELETE',
                         })
                             .then(res => res.json())
