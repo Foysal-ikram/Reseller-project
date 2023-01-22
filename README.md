@@ -2,7 +2,7 @@ Admin : email : ph2@gmail.com
          password : aaasss
 
 
-Live site Link : 
+Live site Link : https://reseller-webite.web.app/
 
 About this project :
 1. Name : OLDKICKERS 
